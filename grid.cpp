@@ -33,25 +33,24 @@ bool Board::checkWin(int piece) {
         for (int col = 0; col < 7; col++) {
 
             if (board[row][col] == piece) {
-
-                int continuous = 1;
-
+                
                 // checks horizontally
+                int continuous = 1;
                 int horizontal_position = col;
                 while (++horizontal_position < 7 && board[row][horizontal_position] == piece) {
                     
                     continuous++;
-                    cout << "conected: " << continuous << endl;
+                    cout << continuous << " in a row" << endl;
                     if (continuous == 4) return true;
                 }
-
+                
                 // checks vertically
                 continuous = 1;
                 int vertical_position = row;
                 while (++vertical_position < 6 && board[vertical_position][col] == piece) {
 
                     continuous++;
-                    cout << "conected: " << continuous << endl;
+                    cout << continuous << " in a row" << endl;
                     if (continuous == 4) return true;
                 }
 
@@ -62,7 +61,7 @@ bool Board::checkWin(int piece) {
                 while (++horizontal_position < 7 && ++vertical_position < 6 && board[vertical_position][horizontal_position] == piece) {
 
                     continuous++;
-                    cout << "conected: " << continuous << endl;
+                    cout << continuous << " in a row" << endl;
                     if (continuous == 4) return true;
                 }
                 
@@ -73,7 +72,7 @@ bool Board::checkWin(int piece) {
                 while (++horizontal_position < 7 && --vertical_position >= 0 && board[vertical_position][horizontal_position] == piece) {
 
                     continuous++;
-                    cout << "conected: " << continuous << endl;
+                    cout << continuous << " in a row" << endl;
                     if (continuous == 4) return true;
                 }
             }
