@@ -3,9 +3,12 @@
 #include <iostream>
 #include <memory>
 #include <typeinfo>
+#include <cstdlib>
+#include <string>
 
 using namespace std;
 
+// constructor
 Game::Game(player* pl1, player* pl2) {
 
     set_players(pl1, pl2);

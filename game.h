@@ -9,9 +9,10 @@ class Game {
     public:
 
         Game() {};
-        Game(player* player1, player* player2);
-        void set_players(player *player1, player *player2);
+        Game(player* player1, player* player2);             // a constructor with some arguments
+        void set_players(player *player1, player *player2); // sets the players, polymorphism used here
         int playgame();
+        
 
     private:
 

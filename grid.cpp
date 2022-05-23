@@ -1,5 +1,6 @@
 #include "grid.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -23,6 +24,50 @@ void Board::display() {
 
     cout << "   -------------" << endl;
     cout << endl;
+}
+
+// the board constructor
+Board::Board() {
+
+    for (int row = 0; row < 6; row++) {
+
+        for (int col = 0; col < 7; col++) {
+
+            board[row][col] = 0;
+        }
+    }
+
+    display();
+}
+
+// place pieces on the board
+bool Board::place(int col, int piece) {
+
+    int row = 0;
+
+    for (; row < 6; row++) {
+
+        if (board[row][col] != 0) {
+
+            break;
+        }
+    }
+
+    if (row <= 0) {
+        
+        return false;
+        
+        cout << "Invalid move" << endl;
+    }
+
+    else {
+
+        row --;
+        board[row][col] = piece;
+        display();
+    }
+
+    return true;
 }
 
 // check if there are 4 pieces in a row 
@@ -79,46 +124,4 @@ bool Board::checkWin(int piece) {
         }
      }
      return false;
-}
-
-Board::Board() {
-
-    for (int row = 0; row < 6; row++) {
-
-        for (int col = 0; col < 7; col++) {
-
-            board[row][col] = 0;
-        }
-    }
-
-    display();
-}
-
-// place pieces on the board
-bool Board::place(int col, int piece) {
-
-    int row = 0;
-
-    for (; row < 6; row++) {
-
-        if (board[row][col] != 0) {
-
-            break;
-        }
-    }
-
-    if (row <= 0) {
-
-        cout << "Invalid move" << endl;
-        return false;
-    }
-
-    else {
-
-        row --;
-        board[row][col] = piece;
-        display();
-    }
-
-    return true;
 }
