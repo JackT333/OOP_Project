@@ -1,0 +1,9 @@
+Test 1: When asked to choose game mode (either 1 or 2), input letters, numbers, spaces, and other characters
+
+Result for test 1: Code does not crash, prints out "Incorrect option" and ask user to select correct game mode again
+
+
+
+Test 2: When asked to input a column number (1 - 7), input numbers out of range, letters, and other characters
+
+Result for test 2: Code does not crash, simply request user to input the column number again that's in the specified range
